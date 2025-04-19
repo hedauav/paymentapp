@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Transactions - PaymentApp{% endblock %}
+
+{% block content %}
+<div class="transactions-container">
+    <h1>Transaction History</h1>
+    
+    {% if transactions %}
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr class="{% if transaction['sender_id'] == session['user_id'] %}outgoing{% else %}incoming{% endif %}">
+                    <td>{{ transaction['created_at'] }}</td>
+                    <td>{{ transaction['sender_name'] }}</td>
+                    <td>{{ transaction['receiver_name'] }}</td>
+                    <td>${{ "%.2f"|format(transaction['amount']) }}</td>
+                    <td>{{ transaction['description'] or '-' }}</td>
+                    <td>{{ transaction['status'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="no-transactions">No transactions found.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('dashboard') }}" class="btn secondary">Back to Dashboard</a>
+</div>
+{% endblock %}

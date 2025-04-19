@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - PaymentApp{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h1>Login to Your Account</h1>
+    <form method="post" class="auth-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn primary">Login</button>
+    </form>
+    <p class="auth-redirect">Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+</div>
+{% endblock %}

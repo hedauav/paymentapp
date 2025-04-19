@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}PaymentApp - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Simple, Fast, Secure Payments</h1>
+        <p>Send and receive money with ease using our simple payment application.</p>
+        {% if 'user_id' not in session %}
+            <div class="cta-buttons">
+                <a href="{{ url_for('register') }}" class="btn primary">Sign Up</a>
+                <a href="{{ url_for('login') }}" class="btn secondary">Login</a>
+            </div>
+        {% else %}
+            <div class="cta-buttons">
+                <a href="{{ url_for('dashboard') }}" class="btn primary">Go to Dashboard</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h2>Easy Transfers</h2>
+        <p>Send money to anyone with just a few clicks.</p>
+    </div>
+    <div class="feature">
+        <h2>Secure Transactions</h2>
+        <p>Your data and money are protected with advanced security.</p>
+    </div>
+    <div class="feature">
+        <h2>Transaction History</h2>
+        <p>Keep track of all your payments in one place.</p>
+    </div>
+</section>
+{% endblock %}
