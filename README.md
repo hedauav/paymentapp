@@ -13,13 +13,10 @@ PaymentApp is a comprehensive web-based payment processing solution designed to 
 ## ✨ Features
 
 - **User Authentication**: Secure registration and login system
-- **Payment Processing**: Support for credit cards, debit cards, and bank transfers
+- **Payment Processing**: Support  bank transfers
 - **Transaction History**: View and filter past transactions
 - **Admin Dashboard**: Monitor payments and user activity
-- **Account Management**: Update profile and payment preferences
-- **Security**: Encrypted transactions and data protection
 - **Responsive Design**: Optimized for both desktop and mobile devices
-- **Email Notifications**: Automatic receipts and status updates
 
 ## 🛠️ Technologies
 
