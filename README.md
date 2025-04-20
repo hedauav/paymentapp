@@ -50,9 +50,3 @@ PaymentApp is a comprehensive web-based payment processing solution designed to 
 - pip
 - Git
 
-### Setup Instructions
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hedauav/paymentapp.git
-   cd paymentapp
